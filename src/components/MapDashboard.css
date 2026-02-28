@@ -21,10 +21,7 @@
     color: #666;
 }
 
-/* Apple Weather Liquid Cloud Effects */
-.leaflet-overlay-pane {
-    filter: url(#gooey-heat);
-}
+/* Removed Gooey filter to restore cross-browser visibility */
 
 .heat-zone-marker {
     stroke: none;
@@ -42,22 +39,22 @@
 
 .cloud-urgent {
     fill: #ff3333;
-    fill-opacity: 0.8;
-    mix-blend-mode: overlay;
+    fill-opacity: 0.7;
+    filter: drop-shadow(0 0 15px rgba(255, 51, 51, 0.8));
     animation: floatCloud 15s ease-in-out infinite alternate;
 }
 
 .cloud-moderate {
     fill: #ffb703;
     fill-opacity: 0.6;
-    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 15px rgba(255, 183, 3, 0.7));
     animation: floatCloud 18s ease-in-out infinite alternate-reverse;
 }
 
 .cloud-normal {
     fill: #52b788;
-    fill-opacity: 0.4;
-    mix-blend-mode: screen;
+    fill-opacity: 0.5;
+    filter: drop-shadow(0 0 15px rgba(82, 183, 136, 0.6));
     animation: floatCloud 22s ease-in-out infinite alternate;
 }
 

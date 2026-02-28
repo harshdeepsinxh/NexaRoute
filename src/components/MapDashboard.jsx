@@ -67,14 +67,6 @@ const MapDashboard = ({
 
   return (
     <div className="map-dashboard-container">
-      {/* SVG Gooey Filter Definition */}
-      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
-        <filter id="gooey-heat">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </svg>
 
       <MapContainer center={centerPosition} zoom={13} className="leaflet-map" zoomControl={false}>
         <ZoomControl position="bottomleft" />
