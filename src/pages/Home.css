@@ -1,0 +1,153 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(12px);
+  --glass-radius: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+}
+
+.map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  /* Let clicks pass through to map */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Base Glassmorphism Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--glass-radius);
+  pointer-events: auto;
+  /* Re-enable clicks for UI elements */
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.header-titles h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.header-titles p {
+  color: #4b5563;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.header-stats {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes deliveryPulse {
+  0% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    transform: translateX(0px);
+  }
+
+  50% {
+    opacity: 1.0;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+    transform: translateX(4px);
+  }
+
+  100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    transform: translateX(0px);
+  }
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  animation: deliveryPulse 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.home-header:hover .header-icon {
+  animation-play-state: paused;
+}
+
+.header-icon svg {
+  fill: #1a1a1a;
+  /* Explicitly set the icon color to match titles instead of white so it shows up on the light glass header */
+}
+
+.eta-ticker {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1.5rem;
+}
+
+.eta-label {
+  font-size: 0.75rem;
+  color: #374151;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.eta-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.sidebar-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+  /* Wrapper shouldn't catch clicks */
+}

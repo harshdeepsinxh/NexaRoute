@@ -1,0 +1,244 @@
+.summary-sidebar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-width: 250px;
+}
+
+.summary-sidebar h2 {
+    margin: 0 0 0.5rem 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.75rem;
+    text-align: left;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ddd;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.stat-box.primary {
+    border-left-color: #3b82f6;
+}
+
+.stat-box.primary {
+    border-left-color: #3b82f6;
+}
+
+.stat-box h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.9rem;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-box .stat-value {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* UI Controls in Sidebar */
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.control-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.rider-toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.rider-toggle-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider.glow-blue {
+    background-color: #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+}
+
+input:checked+.slider.glow-red {
+    background-color: #ef4444;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.8);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+/* Time Series Slider in Sidebar */
+.sidebar-time-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.sidebar-time-slider label {
+    color: #4b5563;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.sidebar-time-slider strong {
+    color: #2563eb;
+    font-size: 1.1rem;
+}
+
+/* Time Slider Input Styling */
+.time-slider-input {
+    width: 100%;
+    margin-top: 0.5rem;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+/* Density Zones Grid */
+.density-zones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: -0.5rem;
+    /* Pull slightly closer to Total Orders */
+}
+
+.zone-card {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.zone-card:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.zone-card.active {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    border-width: 2px;
+}
+
+.zone-count {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.zone-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #4b5563;
+}
+
+/* Specific Zone Accents */
+.red-zone {
+    border-bottom: 3px solid #ef4444;
+}
+
+.red-zone.active {
+    border-color: #ef4444;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.mustard-zone {
+    border-bottom: 3px solid #E1AD01;
+}
+
+.mustard-zone.active {
+    border-color: #E1AD01;
+    box-shadow: 0 0 10px rgba(225, 173, 1, 0.3);
+}
+
+.green-zone {
+    border-bottom: 3px solid #22c55e;
+}
+
+.green-zone.active {
+    border-color: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+
+/* Pulse Animation for Urgent Increases */
+@keyframes redPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        background: rgba(239, 68, 68, 0.2);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.zone-card.red-zone.pulse-alert {
+    animation: redPulse 1s ease-out 2;
+    /* Pulse twice over 2 seconds */
+}
+
+/* End of sidebar styles */
