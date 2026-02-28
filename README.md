@@ -2,7 +2,7 @@
 
 NexaRoute is a modern, high-performance order delivery and logistics tracking dashboard built with React and Leaflet. It visualizes city-wide order density, active fleet status, and warehouse planning metrics using a stunning Glassmorphism UI and dynamic, organic map overlays.
 
-## 🚀 Features
+Features
 
 *   **Apple Weather Liquid Cloud Effect:** Replaces standard static heatmap circles with fluid, organic, and drifting SVG filtered clouds (`mix-blend-mode: screen/overlay`) to visualize order density beautifully.
 *   **Live Traffic Integration:** Overlays real-time Google Maps traffic data dynamically beneath the delivery zones for accurate logistics planning.
@@ -12,7 +12,7 @@ NexaRoute is a modern, high-performance order delivery and logistics tracking da
 *   **Demand Categorization:** Orders are automatically categorized into Urgent (Red), Moderate (Mustard), and Normal (Green) zones with dedicated interactive metrics.
 
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 *   **Frontend Framework:** React 18 (using Vite)
 *   **Mapping Engine:** Leaflet & React-Leaflet
@@ -21,7 +21,7 @@ NexaRoute is a modern, high-performance order delivery and logistics tracking da
 *   **Icons:** Lucide React
 
 
-## 💻 How to Run Locally
+##  How to Run Locally
 
 Follow these steps to get the NexaRoute dashboard running on any local machine.
 
@@ -50,7 +50,7 @@ npm run dev
 Once the server starts, it will usually be available at `http://localhost:5173` (or `http://localhost:5174`). Open that link in your web browser to view the interactive dashboard.
 
 
-## 📂 Project Structure Overview
+##  Project Structure Overview
 
 *   `src/components/MapDashboard.jsx`: The core interactive map component containing the Leaflet logic, SVG Gooey Filters, and dynamic marker clustering.
 *   `src/components/SummarySidebar.jsx`: The left-hand Glassmorphism command center containing the metrics, toggles, and time slider.
